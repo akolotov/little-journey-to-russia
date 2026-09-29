@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#e8f6ff">
+    <title>Little Journey to Russia</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="src/story.js" defer></script>
+    <script src="src/globe-map.js?v=2" defer></script>
+    <script src="src/scenes.js" defer></script>
+    <script src="src/app.js" defer></script>
+  </head>
+  <body>
+    <div id="app" class="app">
+      <header class="topbar">
+        <button id="home-button" class="icon-button adult-control" type="button" aria-label="Go home" title="Home">⌂</button>
+        <div class="brand"><span class="brand-star" aria-hidden="true">✦</span> Little Journey to Russia</div>
+        <div id="progress" class="progress" aria-label="Story progress"></div>
+        <button id="restart-button" class="text-button adult-control" type="button" title="Restart this scene">↺ <span>Restart</span></button>
+      </header>
+
+      <main class="main">
+        <section id="stage" class="stage" aria-label="Story scene">
+          <div id="scene-art" class="scene-art" aria-hidden="true"></div>
+          <div class="stage-shade" aria-hidden="true"></div>
+          <div class="stage-heading">
+            <div id="scene-kicker" class="kicker"></div>
+            <h1 id="scene-title"></h1>
+            <p id="scene-subtitle"></p>
+          </div>
+          <div id="mode-picker" class="mode-picker" aria-label="Learning mode"></div>
+          <div id="scene-counter" class="scene-counter"></div>
+        </section>
+
+        <section class="control-panel" aria-label="Story controls">
+          <div class="control-content">
+            <div class="speech-area">
+              <div id="speech-icon" class="speech-icon" aria-hidden="true">✦</div>
+              <div class="speech-copy">
+                <div id="turn-label" class="turn-label"></div>
+                <p id="phrase" class="phrase" aria-live="polite"></p>
+              </div>
+            </div>
+            <div id="scene-actions" class="scene-actions"></div>
+          </div>
+          <button id="speaker-button" class="speaker-button" type="button" aria-label="Hear the sentence" title="Hear the sentence">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 12h6l8-7v22l-8-7H4z" fill="currentColor"/><path d="M22 10c3 2 3 10 0 12M25 6c6 4 6 16 0 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </button>
+        </section>
+      </main>
+      <footer class="footer"><span id="mode-description">Choose how to play</span><span class="footer-tip">Made for little hands ✦</span></footer>
+    </div>
+  </body>
+</html>

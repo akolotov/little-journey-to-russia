@@ -1,0 +1,9 @@
+.git
+.env
+.venv
+node_modules
+README.md
+AGENTS.md
+FAMILY_HUB_BROWSER_TARGET.md
+docker-compose.yml
+.github

@@ -1,0 +1,23 @@
+services:
+  web:
+    image: ${STORY_IMAGE:?STORY_IMAGE must be set}
+    pull_policy: ${STORY_PULL_POLICY:-always}
+    restart: unless-stopped
+    environment:
+      STORY_BASE_PATH: ${STORY_BASE_PATH:?STORY_BASE_PATH must be set}
+    volumes:
+      - ./assets/audio:/usr/share/nginx/html/assets/audio:ro
+    logging:
+      driver: json-file
+      options:
+        max-size: "1m"
+        max-file: "1"
+    networks:
+      tailscale-ingress:
+        aliases:
+          - ${STORY_DOCKER_ALIAS:?STORY_DOCKER_ALIAS must be set}
+
+networks:
+  tailscale-ingress:
+    external: true
+    name: tailscale-ingress

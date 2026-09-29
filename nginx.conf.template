@@ -1,0 +1,36 @@
+server {
+  listen 8080;
+  server_name _;
+
+  include /etc/nginx/mime.types;
+  default_type application/octet-stream;
+
+  location = ${STORY_BASE_PATH} {
+    return 301 ${STORY_BASE_PATH}/;
+  }
+
+  location = ${STORY_BASE_PATH}/ {
+    alias /usr/share/nginx/html/;
+    index index.html;
+    add_header Cache-Control "no-store, no-cache, must-revalidate, max-age=0" always;
+  }
+
+  location = ${STORY_BASE_PATH}/index.html {
+    alias /usr/share/nginx/html/index.html;
+    add_header Cache-Control "no-store, no-cache, must-revalidate, max-age=0" always;
+  }
+
+  location ${STORY_BASE_PATH}/assets/audio/ {
+    alias /usr/share/nginx/html/assets/audio/;
+    add_header Cache-Control "no-cache" always;
+  }
+
+  location ${STORY_BASE_PATH}/ {
+    alias /usr/share/nginx/html/;
+    add_header Cache-Control "no-store, no-cache, must-revalidate, max-age=0" always;
+  }
+
+  location / {
+    return 404;
+  }
+}
