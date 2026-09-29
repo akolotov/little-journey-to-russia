@@ -2,6 +2,10 @@
 
 A small touch-first interactive story to practice a kindergarten presentation. It uses plain HTML, CSS, JavaScript, and original SVG illustrations. There are no network services or build dependencies after the static files load.
 
+## Preview
+
+![Little Journey to Russia app preview](assets/app-preview.png)
+
 ## Play
 
 Choose **Listen**, **Repeat**, or **Tell**, then tap **Start journey**. Tap the large action button or the illustrated object in each stop. The speaker button replays the current sentence. In Tell mode, the sentence stays hidden until the speaker hint is tapped. The recap shows five pictures without automatically speaking or showing the answers.
